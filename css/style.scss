@@ -334,14 +334,6 @@ template {
 *:after {
   box-sizing: border-box;
 }
-/*____CUSTOM FONTS____*/
-
-@font-face {
-  font-family: "KardinaL Extra Bold", sans-serif;
-  src: url("./../fonts/Kardinal-ExtraBold.otf")format("opentype");
-  font-weight: 900;
-  font-style: normal;
-}
 
 /*_____VARIABLES_____*/
 
@@ -351,170 +343,63 @@ $pink-color: #F3006E;
 
 /*_______HEADER_______*/
 
-.main-section {
+.header {
   display: block;
-  margin: 0 auto;
   width: 100%;
-  min-height: 700px;
-  font-family: Roboto, sans-serif;
-  background: url("./../img/unnamed.png") 80% 20px no-repeat;
-  background-size: 600px 700px;
-  &__general-container {
+  max-width: 700px;
+  background-color: $secondary-color;
+  position: relative;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  &__item-container {
     display: flex;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding-top: 150px;
-    align-items: flex-start;
-
+    flex-direction: column;
+    padding: 15px;
   }
-  &__description {
-  }
-  &__title {
+  &__item {
+    display: block;
+    width: 60px;
     margin-bottom: 10px;
-    font-family: "KardinaL Extra Bold", sans-serif;
-    font-size: 72px;
-    line-height: 78px;
-    color: $main-color;
-  }
-  &__sub-title {
-    margin-bottom: 50px;
-    font-size: 22px;
-    color: $secondary-color;
-  }
-  &__technology-list {
-    margin-bottom: 30px;
-    padding: 5px 20px;
-    border: 2px solid $main-color;
-    border-right: none;
-    border-left: none;
-  }
-  &__technology {
-    display: inline-block;
-    list-style-type: none;
-    text-transform: uppercase;
-    a {
-      text-decoration: none;
-      color: $secondary-color;
-
-    }
-    a:hover {
-      transition: 0.4s;
-      color: #ffa922;
-    }
-  }
-  &__timer-box {
-    display: block;
-    margin-bottom: 40px;
-  }
-  &__start-date {
-    display: inline-block;
-    max-width: 150px;
-    &.-time {
-      margin-right: 100px;
-    }
-  }
-  &__start-title {
-    display: block;
-    margin-bottom: 10px;
-    color: #D1D1D1;
-  }
-  &__date {
-    font-weight: 700;
-  }
-  &__info-buttons {
-    display: block;
-  }
-  &__button {
-    display: inline-block;
-    padding: 10px 20px;
-    outline: none;
     background-color: $pink-color;
-    color: #ffffff;
-    font-size: 15px;
-    text-transform: uppercase;
-    text-align: center;
-    border: 1px solid transparent;
-    border-radius: 19px;
-    box-shadow: 0 4px 16px 0 #ff61a8;
-    &.-last {
-      margin-left: 15px;
-      background-color: #ffffff;
-      color: $pink-color;
-      border: 1px solid $pink-color;
-      box-shadow: 0 4px 16px 0 #ffb4ce;
-    }
-    &:hover {
-      cursor: pointer;
-      transition: 0.5s;
-      transform: scale(1.1);
+    p {
+      color: white;
+      font-family: Roboto, sans-serif;
+      text-align: center;
     }
   }
-
 }
-@media all and (max-width: 1199px) {
-  .main-section {
-    padding: 0 40px;
-    background: url(./../img/unnamed.png) 96% 20px no-repeat;
-    background-size: 453px;
-    &__general-container {
-      padding-top: 120px;
-    }
+.popup {
+  display: block;
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: $main-color;
+  color: #ffffff;
+  &__copy-img {
+    display: block;
+    text-align: center;
   }
+  &__copy-name {
+    display: block;
+    text-align: center;
+  }
+}
+
+
+
+/*_____MEDIA______*/
+
+@media all and (max-width: 1199px) {
+
 }
 @media all and (max-width: 1023px) {
-  .main-section {
-    padding: 0 10px;
-    background: url(./../img/unnamed.png) center bottom no-repeat;
-    background-size: 253px;
-    &__general-container {
-      max-width: 460px;
-      padding-top: 20px;
-    }
-    &__title {
-      text-align: center;
-    }
-    &__sub-title {
-      text-align: center;
-      margin-bottom: 30px;
-    }
-    &__technology-list {
-      display: block;
-      max-width: 415px;
-      margin: 0 auto 20px;
-      padding: 5px 10px;
-      font-size: 15px;
-    }
-  }
+
 }
 @media all and (max-width: 479px) {
-  .main-section {
-    background-size: 200px;
-    min-height: 900px;
-    &__title {
-      font-size: 50px;
-      line-height: 52px;
-    }
-    &__technology {
-      display: block;
-      text-align: center;
-      padding: 5px 0;
-    }
-    &__start-date {
-      display: block;
-      margin: 0 auto;
-      text-align: center;
-      &.-time {
-        margin: 0 auto 20px;
-      }
-    }
-    &__button {
-      display: block;
-      margin: 0 auto 20px;
-      &.-last {
-        margin: 0 auto;
-      }
-    }
-  }
+
 }
 
