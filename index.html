@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>TEST ItProger</title>
+	<title>TEST G5</title>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="icon" href="favicon.png"/>
@@ -11,35 +11,71 @@
 </head>
 <body>
 	<header class="header">
+		<div class="header__top">
+			<div class="header__logo">
+				<img src="./img/logo.svg" alt="logo">
+			</div>
+			<h1 class="header__top-banner">g5 friends<sup>TM</sup></h1>
+		</div>
 		<div class="header__item-container">
-			<div class="header__item">
-				<p>man1</p>
-				<img src="./img/man1.jpg" alt="">
+			<div class="header__item -first">
+				<div class="header__item-img">
+					<img src="./img/man1.jpg" alt="">
+				</div>
+				<p>Jack</p>
 			</div>
 			<div class="header__item">
-				<p>woman2</p>
-				<img src="./img/woman2.jpg" alt="">
+				<div class="header__item-img">
+					<img src="./img/woman2.jpg" alt="">
+				</div>
+				<p>Jane</p>
 			</div>
 			<div class="header__item">
-				<p>man2</p>
-				<img src="./img/man2.jpg" alt="">
+				<div class="header__item-img">
+					<img src="./img/man2.jpg" alt="">
+				</div>
+				<p>Joe</p>
 			</div>
 			<div class="header__item">
-				<p>woman1</p>
-				<img src="./img/woman1.jpg" alt="">
+				<div class="header__item-img">
+					<img src="./img/woman1.jpg" alt="">
+				</div>
+				<p>Jannet</p>
 			</div>
 		</div>
 	</header>
-	<div class="popup">
-		<div class="popup__copy-img">
-			copied image
+	<div class="popup-bg">
+		<div class="popup-frame">
+			<h4 class="popup-title">Are you sure you want to unblock this hero?</h4>
+			<div class="copy-hero">
+			</div>
+			<div class="popup-unblock">
+				<button class="popup-button">Unblock</button>
+				<button class="popup-button popup-cancel">Cancel</button>
+			</div>
 		</div>
-		<p class="popup__copy-name">
-			copied name
-		</p>
 	</div>
 	<script>
+        let item = document.querySelectorAll('.header__item'),
+            popupBg = document.querySelector('.popup-bg');
+            popup = document.querySelector('.copy-hero');
 
+        for(let i = 0; i < item.length; i++) {
+            item[i].addEventListener('click', function(){
+                popupBg.classList.toggle('visible');
+                popup.innerHTML = this.innerHTML;
+				});
+
+        };
+        window.onclick = function(event) {
+            if (event.target == popupBg) {
+                popupBg.classList.toggle('visible');
+            }
+        };
+        let cancelButton = document.querySelector('.popup-cancel');
+			cancelButton.onclick = function (e) {
+                popupBg.classList.toggle('visible');
+            };
 	</script>
 </body>
 </html>
